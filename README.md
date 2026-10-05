@@ -56,8 +56,7 @@ uvicorn app:app --reload
 Open in your browser:
 
 - App: `http://127.0.0.1:8000/`
-- Health check: `http://127.0.0.1:8000/health` → `{"message": "ML API is running"}`
-- API docs: `http://127.0.0.1:8000/docs`
+
 
 **macOS (Apple Silicon) note:** XGBoost needs OpenMP. If import fails, run:
 
@@ -66,7 +65,6 @@ brew install libomp
 export DYLD_LIBRARY_PATH="$VIRTUAL_ENV/lib/python3.12/site-packages/sklearn/.dylibs${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
 ```
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for Vercel deployment and retraining (`python -m training.train`).
 
 ## Directory Structure
 
