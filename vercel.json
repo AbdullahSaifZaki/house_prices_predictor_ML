@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "excludeFiles": "{data/**,notebooks/**,training/**,.venv/**,technical-report.pdf,Model/metrics.json}",
+      "maxDuration": 60
+    }
+  }
+}

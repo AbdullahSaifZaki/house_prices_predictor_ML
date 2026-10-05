@@ -1,0 +1,11 @@
+# Runtime dependencies; pip installs their supporting packages automatically.
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic==2.13.5
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.7.2
+xgboost-cpu==3.4.1; sys_platform == "linux"
+xgboost==3.4.1; sys_platform != "linux"
+
+# For retraining only: pip install catboost==1.2.10

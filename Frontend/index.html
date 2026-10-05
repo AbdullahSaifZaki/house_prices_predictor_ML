@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkiye House Price Predictor</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>EstateEstimate</h1>
+            <p>House Price Prediction Model</p>
+            <p class="notice">Research demo based on historical data. City coverage varies; estimates do not reflect live market prices.</p>
+        </div>
+
+        <form id="predictionForm">
+            <div class="form-section">
+                <h2>Location & Basics</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="city">City (Şehir)</label>
+                        <select id="city" name="Şehir" required>
+                            <option value="">Loading options…</option></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="net_sqm">Net Area (m²) (Net_Metrekare)</label>
+                        <input type="number" id="net_sqm" name="Net_Metrekare" placeholder="e.g. 100" min="50.01" max="499.99" step="0.01" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Property Features</h2>
+                <div class="grid-3">
+                    <div class="input-group">
+                        <label for="rooms">Total Rooms (3+1 = 4)</label>
+                        <input type="number" id="rooms" name="Oda_Sayısı" placeholder="e.g. 4.0" min="0.5" max="8.5" step="0.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="bathrooms">Bathrooms (Banyo_Sayısı)</label>
+                        <input type="number" id="bathrooms" name="Banyo_Sayısı" placeholder="e.g. 1" min="1" max="4" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="heating">Heating (Isıtma_Tipi)</label>
+                        <select id="heating" name="Isıtma_Tipi" required>
+                            <option value="">Loading options…</option></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Building Details</h2>
+                <div class="grid-3">
+                    <div class="input-group">
+                        <label for="Floor">Floor (Bulunduğu_Kat)</label>
+                        <select id="Floor" name="Bulunduğu_Kat" required>
+                            <option value="">Loading options…</option></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="total_floors">Total Floors (Binanın_Kat_Sayısı)</label>
+                        <input type="number" id="total_floors" name="Binanın_Kat_Sayısı" placeholder="e.g. 10" min="1" max="100" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="age">Building Age (years)</label>
+                        <input type="number" id="age" name="Binanın_Yaşı" placeholder="e.g. 5" min="0" max="200" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Additional Details</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="usage">Usage Status (Kullanım_Durumu)</label>
+                        <select id="usage" name="Kullanım_Durumu" required>
+                            <option value="">Loading options…</option></select>
+                    </div>
+
+                </div>
+            </div>
+
+            <p id="status" role="status" aria-live="polite"></p>
+            <button type="submit" id="predictBtn" disabled>Estimate Price</button>
+        </form>
+
+        <div id="resultArea" class="hidden" aria-live="polite">
+            <h2>Estimated Price:</h2>
+            <p id="priceText">₺ 0.00</p>
+        </div>
+    </div>
+
+    <script src="/assets/script.js"></script>
+</body>
+</html>

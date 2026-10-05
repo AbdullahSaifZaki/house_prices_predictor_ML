@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+button#predictBtn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button#predictBtn:hover {
+    background-color: #34495e;
+}
+
+#resultArea {
+    margin-top: 30px;
+    text-align: center;
+    background: #e8f6f3;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d1f2eb;
+}
+
+.hidden { display: none; }
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+* { box-sizing: border-box; }
+.form-section h2 { font-size: 1.1rem; color: var(--primary-color); }
+.notice { font-size: 0.9rem; line-height: 1.5; color: #555; }
+#status { color: #a32620; line-height: 1.5; }
+#priceText { font-size: 2rem; font-weight: bold; }
+button#predictBtn:disabled { opacity: 0.65; cursor: wait; }
