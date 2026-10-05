@@ -31,38 +31,17 @@ See the [six-page technical report](technical-report.pdf) and [machine-readable 
 ## Directory Structure
 
 ```text
-├── app.py               # Local and Vercel entrypoint
-├── Backend/             # API, validation and shared preprocessing
-├── Frontend/            # HTML, CSS and JavaScript
-├── Model/               # Fitted pipeline and allowed input values
-├── data/                # Raw data and reproducible snapshots
-├── training/            # Data preparation and model comparison
-├── notebooks/           # Cleaning, EDA and experiment summaries
-└── technical-report.pdf # Six-page technical report
+├── app.py              
+├── Backend/             
+├── Frontend/          
+├── Model/              
+├── data/               
+├── training/           
+├── notebooks/       
+└── technical-report.pdf 
 ```
 
-## Usage
 
-Use Python 3.12. From the repository root:
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app:app --reload
-```
 
-Open [localhost:8000](http://localhost:8000) for the app or [/docs](http://localhost:8000/docs) for the API. On Windows, activate with `.venv\Scripts\activate`. On macOS, XGBoost also requires OpenMP (`brew install libomp`); see [setup details](DEPLOYMENT.md).
 
-To retrain all four models and update the saved model and metrics:
-
-```bash
-pip install catboost==1.2.10
-python -m training.train
-```
-
-## Deployment and Limitations
-
-The repository includes [Vercel configuration and deployment instructions](DEPLOYMENT.md). A live Vercel deployment has not been verified.
-
-This is a research demo. Dataset provenance and collection date are unknown; city coverage is uneven, and there are no live market updates. Estimates should not be treated as current valuations.
